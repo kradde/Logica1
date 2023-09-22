@@ -15,9 +15,9 @@ public class Logica1 {
         try {
             reader = new BufferedReader(new FileReader("input.txt"));
             String line = reader.readLine();
-            // ignore the first line, get the second line
-            line = reader.readLine();
-            while (line != null) {
+            int times = Integer.parseInt(line);
+            while(times-- > 0){
+                line = reader.readLine();
                 String[] split = line.trim().split(" ");
                 int ingredients = Integer.parseInt(split[0]);
 
@@ -30,7 +30,6 @@ public class Logica1 {
                     System.out.print(Integer.parseInt(split[i + 1]) / max);
                 }
                 System.out.println();
-                line = reader.readLine();
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
